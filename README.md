@@ -27,24 +27,25 @@ Clone the repository:
 
 ```bash
 git clone <your-repository-url>
-cd linux-system-monitor```
+cd linux-system-monitor
+```
 
-Install the dependency:
-
+## Install the dependency:
+```powershell
 pip install psutil
-
-Usage:
+```
+## Usage:
 
 Run with default thresholds:
-
+```bash
 python system_monitor.py
-
+```
 Run with custom thresholds:
-
+```bash
 python system_monitor.py --cpu 80 --memory 75 --disk 90
-
+```
 Example:
-
+```bash
     ======= SYSTEM MONITOR =======
     CPU usage is    : 7.4%
     Memory usage is : 59.4%
@@ -64,3 +65,4 @@ Example:
     Warning: Disk usage is high
 
     System status: Unhealthy
+    ```
