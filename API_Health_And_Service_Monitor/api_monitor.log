@@ -1,7 +1,0 @@
-2026-09-23 13:08:07,946 - INFO - https://api.github.com - 200 - 0.37s - UP
-2026-09-23 13:08:08,488 - INFO - https://jsonplaceholder.typicode.com/posts/1 - 200 - 0.54s - SLOW
-2026-09-23 13:08:13,554 - ERROR - https://httpstat.us/404 - DOWN - Connection Failed
-2026-09-23 13:08:18,591 - ERROR - https://httpstat.us/500 - DOWN - Connection Failed
-2026-09-23 13:08:28,990 - INFO - https://api.github.com - 200 - 0.4s - UP
-2026-09-23 13:08:29,544 - INFO - https://jsonplaceholder.typicode.com/posts/1 - 200 - 0.55s - SLOW
-2026-09-23 13:08:38,023 - ERROR - https://httpstat.us/404 - DOWN - Connection Failed
