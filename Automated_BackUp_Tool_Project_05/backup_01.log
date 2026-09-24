@@ -1,0 +1,40 @@
+2026-09-24 12:06:25,440 - INFO - backups directory is already exists.
+2026-09-24 12:06:25,440 - INFO - Archiving..........
+2026-09-24 12:06:25,440 - INFO - backups\backup_2026-09-24_12-06-25.zip is successfully created.
+2026-09-24 12:06:25,602 - INFO - Uploading backups\backup_2026-09-24_12-06-25.zip on AWS S3 my-devops-backup-05 Bucket
+2026-09-24 12:06:27,621 - INFO - Successfully Uploaded.
+2026-09-24 12:15:08,082 - INFO - backups directory is already exists.
+2026-09-24 12:15:08,082 - INFO - Archiving..........
+2026-09-24 12:15:08,083 - INFO - backups\backup_2026-09-24_12-15-08.zip is successfully created.
+2026-09-24 12:15:08,236 - INFO - Uploading backups\backup_2026-09-24_12-15-08.zip on AWS S3 my-devops-backup-05 Bucket
+2026-09-24 12:15:09,082 - INFO - Successfully Uploaded.
+2026-09-24 12:17:14,638 - INFO - backups directory is already exists.
+2026-09-24 12:17:14,638 - INFO - Archiving..........
+2026-09-24 12:17:14,639 - INFO - backups\backup_2026-09-24_12-17-14.zip is successfully created.
+2026-09-24 12:17:14,796 - INFO - Uploading backups\backup_2026-09-24_12-17-14.zip on AWS S3 automation-bucket-02 Bucket
+2026-09-24 12:17:17,624 - INFO - Successfully Uploaded.
+2026-09-24 12:25:04,069 - INFO - backups directory is already exists.
+2026-09-24 12:25:04,069 - INFO - Archiving..........
+2026-09-24 12:25:04,070 - INFO - backups\backup_2026-09-24_12-25-04.zip is successfully created.
+2026-09-24 12:25:04,230 - INFO - Uploading backups\backup_2026-09-24_12-25-04.zip on AWS S3 automation-bucket-02 Bucket
+2026-09-24 12:25:05,822 - INFO - Successfully Uploaded.
+2026-09-24 12:25:05,823 - INFO - Cleaning Local Backup Files....
+2026-09-24 12:25:05,823 - ERROR - Upload Failed: [WinError 2] The system cannot find the file specified: 'backups\\backup_2026-09-24_12-25-04'
+Traceback (most recent call last):
+  File "B:\AWS\Python\Automation_DevOps_Projects\linux-system-monitor\Automated_BackUp_Tool_Project_05\backup_01.py", line 71, in <module>
+    os.remove(str(backup_name))
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'backups\\backup_2026-09-24_12-25-04'
+2026-09-24 12:26:48,570 - INFO - backups directory is already exists.
+2026-09-24 12:26:48,570 - INFO - Archiving..........
+2026-09-24 12:26:48,570 - INFO - backups\backup_2026-09-24_12-26-48.zip is successfully created.
+2026-09-24 12:26:48,725 - INFO - Uploading backups\backup_2026-09-24_12-26-48.zip on AWS S3 automation-bucket-02 Bucket
+2026-09-24 12:26:50,273 - INFO - Successfully Uploaded.
+2026-09-24 12:26:50,273 - INFO - Cleaning Local Backup Files....
+2026-09-24 12:26:50,273 - INFO - backups\backup_2026-09-24_12-26-48 is deleted.
+2026-09-24 12:30:27,171 - INFO - backups directory is already exists.
+2026-09-24 12:30:27,171 - INFO - Archiving..........
+2026-09-24 12:30:27,172 - INFO - backups\backup_2026-09-24_12-30-27.zip is successfully created.
+2026-09-24 12:30:27,314 - INFO - Uploading backups\backup_2026-09-24_12-30-27.zip on AWS S3 automation-bucket-02 Bucket
+2026-09-24 12:30:30,128 - INFO - Successfully Uploaded.
+2026-09-24 12:30:30,128 - INFO - Cleaning Local Backup Files....
+2026-09-24 12:30:30,128 - INFO - backups\backup_2026-09-24_12-30-27 is deleted.
