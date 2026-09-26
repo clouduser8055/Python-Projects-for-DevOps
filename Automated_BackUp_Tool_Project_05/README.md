@@ -18,19 +18,7 @@ up local backup files.
 
 ## Architecture
 
-(Source Directory ->
-
-Python Script ->
-
-ZIP Backup ->
-
-AWS S3 ->
-
-Retention Policy ->
-
-Delete Old Backups ->
-
-Local Cleanup)
+(Source Directory -> Python Script -> ZIP Backup -> AWS S3 -> Retention Policy -> Delete Old Backups -> Local Cleanup)
 
 ## Technologies
 
