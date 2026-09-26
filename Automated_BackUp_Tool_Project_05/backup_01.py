@@ -27,6 +27,13 @@ def get_arguments():
         help="AWS S3 Bucket"
     )
 
+    parser.add_argument(
+        "--keep",
+        type=int,
+        default=5,
+        help="Number of backups to retain"
+    )
+
     return parser.parse_args()
 
 args = get_arguments()
@@ -63,15 +70,55 @@ try:
     bucket = args.bucket
     # bucket = automation-bucket-02
 
-    s3 = boto3.client('s3')
-    logging.info(f"Uploading {backup_name}.zip on AWS S3 {bucket} Bucket")
-    s3.upload_file(f"{backup_name}.zip", bucket, f"{backup_name}.zip")
+    s3 = boto3.client("s3")
+
+    local_file = f"{backup_name}.zip"
+
+    s3_key = f"backups/{backup_name.name}.zip"
+
+    logging.info(f"Uploading {local_file} to s3://{bucket}/{s3_key}")
+
+    s3.upload_file(
+        local_file,
+        bucket,
+        s3_key
+    )
+
     logging.info("Successfully Uploaded.")
+    print(f"Uploaded : s3://{bucket}/{s3_key}")
     print("Cleaning Local Backup Files....")
     logging.info("Cleaning Local Backup Files....")
     os.remove(f"{backup_name}.zip")
     print(f"{backup_name} is deleted.")
     logging.info(f"{backup_name} is deleted.")
+
+    logging.info("Checking old backups on s3....")
+
+    response = s3.list_objects_v2(
+        Bucket=bucket,
+        Prefix="backups/"
+    )
+    objects = response.get("Contents", [])
+
+
+    print(f"Total backups found: {len(objects)}")
+    logging.info(f"Total backups found: {len(objects)}")
+
+    objects.sort(key=lambda obj:obj["LastModified"], reverse=True)
+
+    old_backups = objects[args.keep:]
+
+    for obj in old_backups:
+        key = obj["Key"]
+        logging.info(f"Deleting Old Backups: {key}")
+
+        s3.delete_object(
+            Bucket=bucket,
+            Key=key
+        )
+
+        print(f"Deleted Old Backups: {key}")
 except Exception as e:
-    print(f"Upload failed: {e}")
-    logging.exception(f"Upload Failed: {e}")
+    print(f"Backup failed: {e}")
+    logging.exception("Backup Failed")
+

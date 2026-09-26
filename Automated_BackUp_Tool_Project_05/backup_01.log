@@ -1,7 +1,0 @@
-2026-09-24 12:30:27,171 - INFO - backups directory is already exists.
-2026-09-24 12:30:27,171 - INFO - Archiving..........
-2026-09-24 12:30:27,172 - INFO - backups\backup_2026-09-24_12-30-27.zip is successfully created.
-2026-09-24 12:30:27,314 - INFO - Uploading backups\backup_2026-09-24_12-30-27.zip on AWS S3 automation-bucket-02 Bucket
-2026-09-24 12:30:30,128 - INFO - Successfully Uploaded.
-2026-09-24 12:30:30,128 - INFO - Cleaning Local Backup Files....
-2026-09-24 12:30:30,128 - INFO - backups\backup_2026-09-24_12-30-27 is deleted.
