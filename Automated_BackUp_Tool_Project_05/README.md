@@ -103,3 +103,27 @@ Uploaded : s3://bucket/backups/backup_2026-09-26_11-30-00.zip
 - Backup retention
 - Windows task scheduling
 - Git/GitHub project organization
+
+# What this project demonstrates
+
+This is no longer just a Python practice script.
+
+You can now say this project demonstrates:
+
+Python automation
+       +
+AWS S3
+       +
+Cloud automation
+       +
+Backup strategy
+       +
+Retention
+       +
+Logging
+       +
+Error handling
+       +
+Scheduling
+       +
+Git/GitHub
