@@ -18,25 +18,19 @@ up local backup files.
 
 ## Architecture
 
-Source Directory
-        |
-        v
-   Python Script
-        |
-        v
-   ZIP Backup
-        |
-        v
-    AWS S3
-        |
-        v
- Retention Policy
-        |
-        v
-Delete Old Backups
-        |
-        v
-Local Cleanup
+(Source Directory ->
+
+Python Script ->
+
+ZIP Backup ->
+
+AWS S3 ->
+
+Retention Policy ->
+
+Delete Old Backups ->
+
+Local Cleanup)
 
 ## Technologies
 
@@ -103,8 +97,11 @@ The tool can be executed automatically using Windows Task Scheduler.
 ## Example Output
 
 Source : source
+
 Backup : backups/backup_2026-09-26_11-30-00.zip
+
 Status : SUCCESS
+
 Uploaded : s3://bucket/backups/backup_2026-09-26_11-30-00.zip
 
 ## What I Learned
