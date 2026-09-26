@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+
+backups/
+*.zip
+
+config.json
+
+run_backup.bat
+run_backup_2.0.bat
+
+.env
+venv/
+.venv/
