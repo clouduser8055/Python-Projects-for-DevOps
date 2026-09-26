@@ -1,0 +1,10 @@
+2026-09-26 12:11:47,695 - INFO - B:\AWS\Python\Automation_DevOps_Projects\linux-system-monitor\Automated_BackUp_Tool_Project_05\backups directory is already exists.
+2026-09-26 12:11:47,696 - INFO - Archiving..........
+2026-09-26 12:11:47,697 - INFO - B:\AWS\Python\Automation_DevOps_Projects\linux-system-monitor\Automated_BackUp_Tool_Project_05\backups\backup_2026-09-26_12-11-47.zip is successfully created.
+2026-09-26 12:11:47,864 - INFO - Uploading B:\AWS\Python\Automation_DevOps_Projects\linux-system-monitor\Automated_BackUp_Tool_Project_05\backups\backup_2026-09-26_12-11-47.zip to s3://automation-bucket-02/backups/backup_2026-09-26_12-11-47.zip
+2026-09-26 12:11:48,749 - INFO - Successfully Uploaded.
+2026-09-26 12:11:48,749 - INFO - Checking old backups on s3....
+2026-09-26 12:11:48,810 - INFO - Total backups found: 3
+2026-09-26 12:11:48,810 - INFO - Deleting Old Backups on AWS S3: backups/backup_2026-09-26_12-04-40.zip
+2026-09-26 12:11:48,864 - INFO - Cleaning Local Backup Files....
+2026-09-26 12:11:48,865 - INFO - B:\AWS\Python\Automation_DevOps_Projects\linux-system-monitor\Automated_BackUp_Tool_Project_05\backups\backup_2026-09-26_12-11-47.zip is deleted.

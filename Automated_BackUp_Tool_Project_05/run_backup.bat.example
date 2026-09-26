@@ -1,0 +1,7 @@
+@echo off
+
+cd /d B:\YourProjectFolder
+
+C:\Path\To\Python\python.exe B:\YourProjectFolder\backup.py
+
+pause

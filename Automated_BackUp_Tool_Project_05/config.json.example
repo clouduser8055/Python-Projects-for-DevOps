@@ -1,0 +1,5 @@
+{
+    "source": "B:\\YourProjectFolder\\source",
+    "bucket": "your-s3-bucket-name",
+    "keep": 2
+}
