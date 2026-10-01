@@ -2,6 +2,7 @@ import docker
 import argparse
 import logging
 
+
 logging.basicConfig(
     filename="docker_manager.log",
     level=logging.INFO,
@@ -23,12 +24,7 @@ def get_arguments():
 
     return parser.parse_args()
 
-client = docker.from_env()
-args = get_arguments()
-
-if args.action == "list":
-    print("Listing Containers.....")
-    logging.info("Listing Containers.....")
+def containers_list(client):
     try:
         containers = client.containers.list(all=True)
         for container in containers:
@@ -38,14 +34,7 @@ if args.action == "list":
         print(f"ERROR: {e}")
         logging.error(e)
 
-elif args.action == "start":
-    if not args.container:
-        print("No container is specified")
-        exit()
-
-    print(f"Starting {args.container} container......")
-    logging.info(f"Starting {args.container} container......")
-
+def start_container(client, args):
     try:
         container = client.containers.get(args.container)
         container.start()
@@ -55,19 +44,12 @@ elif args.action == "start":
     except docker.errors.NotFound as e:
         print(f"ERROR: Container Not Found")
         logging.error(e)
-
+    
     except Exception as e:
         print(f"ERROR: {e}")
         logging.error(e)
 
-elif args.action == "stop":
-    if not args.container:
-        print("No container is specified")
-        exit()
-
-    print(f"Stopping {args.container} container......")
-    logging.info(f"Stopping {args.container} container......")
-
+def stop_container(client, args):
     try:    
         container = client.containers.get(args.container)
         container.stop()
@@ -82,14 +64,7 @@ elif args.action == "stop":
         print(f"ERROR: {e}")
         logging.error(e)
 
-elif args.action == "restart":
-    if not args.container:
-        print("No container is specified")
-        exit()
-
-    print(f"Restarting {args.container} container......")
-    logging.info(f"Restarting {args.container} container......")
-
+def restart_container(client, args):
     try:    
         container = client.containers.get(args.container)
         container.restart()
@@ -104,25 +79,72 @@ elif args.action == "restart":
         print(f"ERROR: {e}")
         logging.error(e)
 
-elif args.action == "logs":
-    if not args.container:
-        print("No container is specified")
-        exit()
-
-    print(f"logging {args.container} container......")
-    logging.info(f"logging {args.container} container......")
-
+def container_logs(client, args):
     try:    
         container = client.containers.get(args.container)
-        logs = container.logs().decode('utf-8')
+        logs = container.logs().decode('utf-8')    
         print(f"-------Logs for {args.container} -----\n{logs}")
-        logging.info(f"----- Logs for {args.container} -----\n{logs}")
+        logging.info(f"----- Logs for {args.container} -----")
 
     except docker.errors.NotFound as e:
-            print(f"ERROR: Container Not Found")
-            logging.error(e)
+        print(f"ERROR: Container Not Found")
+        logging.error(e)
 
     except Exception as e:
         print(f"ERROR: {e}")
         logging.error(e)
+
+
+def main():
+    client = docker.from_env()
+    args = get_arguments()
+
+    if args.action == "list":
+        print("Listing Containers.....")
+        logging.info("Listing Containers.....")
+        containers_list(client)
+
+    elif args.action == "start":
+        if not args.container:
+            print("No container is specified")
+            exit()
+
+        print(f"Starting {args.container} container......")
+        logging.info(f"Starting {args.container} container......")
+
+        start_container(client, args)
+
+    elif args.action == "stop":
+        if not args.container:
+            print("No container is specified")
+            exit()
+
+        print(f"Stopping {args.container} container......")
+        logging.info(f"Stopping {args.container} container......")
+
+        stop_container(client, args)
+        
+    elif args.action == "restart":
+        if not args.container:
+            print("No container is specified")
+            exit()
+
+        print(f"Restarting {args.container} container......")
+        logging.info(f"Restarting {args.container} container......")
+
+        restart_container(client, args)
+
+
+    elif args.action == "logs":
+        if not args.container:
+            print("No container is specified")
+            exit()
+
+        print(f"logging {args.container} container......")
+        logging.info(f"logging {args.container} container......")
+
+        container_logs(client, args)
+
+if __name__ == "__main__":
+    main()
 
